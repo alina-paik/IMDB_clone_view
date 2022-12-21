@@ -1,0 +1,720 @@
+  [1m[35m (637.6ms)[0m  [1m[35mCREATE DATABASE "IMDB_clone_view_development" ENCODING = 'unicode'[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (143.9ms)[0m  [1m[35mCREATE DATABASE "IMDB_clone_view_test" ENCODING = 'unicode'[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (20.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(959756581871131800)[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+Migrating to CreateUsersTable (20221212130829)
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (18.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying DEFAULT '' NOT NULL, "email" character varying DEFAULT '' NOT NULL, "password" character varying DEFAULT '' NOT NULL, "admin" boolean DEFAULT FALSE, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20221212130829_create_users_table.rb:3
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20221212130829_create_users_table.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221212130829"]]
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+Migrating to CreateMoviesTable (20221212131221)
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (18.1ms)[0m  [1m[35mCREATE TABLE "movies" ("id" bigserial primary key, "title" character varying DEFAULT '' NOT NULL, "description" character varying DEFAULT '' NOT NULL, "title_image" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20221212131221_create_movies_table.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221212131221"]]
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+Migrating to CreateCategoriesTable (20221212131749)
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (18.0ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying DEFAULT '' NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20221212131749_create_categories_table.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221212131749"]]
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+Migrating to CreateRatingsTable (20221212131927)
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE TABLE "ratings" ("id" bigserial primary key, "user_id" bigint, "movie_id" bigint, "grade" integer DEFAULT 0 NOT NULL, CONSTRAINT "fk_rails_a7dfeb9f5f"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_62d9686c7c"
+FOREIGN KEY ("movie_id")
+  REFERENCES "movies" ("id")
+)[0m
+  ↳ db/migrate/20221212131927_create_ratings_table.rb:3
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE  INDEX  "index_ratings_on_user_id" ON "ratings"  ("user_id")[0m
+  ↳ db/migrate/20221212131927_create_ratings_table.rb:3
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE  INDEX  "index_ratings_on_movie_id" ON "ratings"  ("movie_id")[0m
+  ↳ db/migrate/20221212131927_create_ratings_table.rb:3
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_ratings_on_user_id_and_movie_id" ON "ratings"  ("user_id", "movie_id")[0m
+  ↳ db/migrate/20221212131927_create_ratings_table.rb:8
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221212131927"]]
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+Migrating to CreateCategoriesMoviesTable (20221212133324)
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "categories_movies" ("id" bigserial primary key, "movie_id" bigint, "category_id" bigint, CONSTRAINT "fk_rails_f9e73880db"
+FOREIGN KEY ("movie_id")
+  REFERENCES "movies" ("id")
+, CONSTRAINT "fk_rails_ed6e916a21"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  ↳ db/migrate/20221212133324_create_categories_movies_table.rb:3
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE  INDEX  "index_categories_movies_on_movie_id" ON "categories_movies"  ("movie_id")[0m
+  ↳ db/migrate/20221212133324_create_categories_movies_table.rb:3
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE  INDEX  "index_categories_movies_on_category_id" ON "categories_movies"  ("category_id")[0m
+  ↳ db/migrate/20221212133324_create_categories_movies_table.rb:3
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_categories_on_name" ON "categories"  ("name")[0m
+  ↳ db/migrate/20221212133324_create_categories_movies_table.rb:7
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221212133324"]]
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (4.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-21 21:34:45.155421"], ["updated_at", "2022-12-21 21:34:45.155421"]]
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(959756581871131800)[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[36mMovie Load (2.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = $1 AND "movies"."description" = $2 LIMIT $3[0m  [["title", "The Shawshank Redemption"], ["description", "Chronicles the experiences of a formerly successful banker as\n    a prisoner in the gloomy jailhouse of Shawshank after being found guilty of a crime he did not commit. The film\n    portrays the man's unique way of dealing with his new, torturous life; along the way he befriends a number of\n    fellow prisoners, most notably a wise long-term inmate named Red."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:55
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mMovie Create (2.9ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Shawshank Redemption"], ["description", "Chronicles the experiences of a formerly successful banker as\n    a prisoner in the gloomy jailhouse of Shawshank after being found guilty of a crime he did not commit. The film\n    portrays the man's unique way of dealing with his new, torturous life; along the way he befriends a number of\n    fellow prisoners, most notably a wise long-term inmate named Red."], ["created_at", "2022-12-21 21:35:13.539761"], ["updated_at", "2022-12-21 21:35:13.539761"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Create (2.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Drama"], ["created_at", "2022-12-21 21:35:13.597315"], ["updated_at", "2022-12-21 21:35:13.597315"]]
+  ↳ db/seeds.rb:59
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (3.7ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (3.6ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 1], ["category_id", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mMovie Load (1.8ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = $1 AND "movies"."description" = $2 LIMIT $3[0m  [["title", " Schindler's List"], ["description", "Oskar Schindler is a vain and greedy German businessman who becomes an\n    unlikely humanitarian amid the barbaric German Nazi reign when he feels compelled to turn his factory into a refuge\n    for Jews. Based on the true story of Oskar Schindler who managed to save about 1100 Jews from being gassed at the\n    Auschwitz concentration camp, it is a testament to the good in all of us."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:55
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mMovie Create (2.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", " Schindler's List"], ["description", "Oskar Schindler is a vain and greedy German businessman who becomes an\n    unlikely humanitarian amid the barbaric German Nazi reign when he feels compelled to turn his factory into a refuge\n    for Jews. Based on the true story of Oskar Schindler who managed to save about 1100 Jews from being gassed at the\n    Auschwitz concentration camp, it is a testament to the good in all of us."], ["created_at", "2022-12-21 21:35:13.725871"], ["updated_at", "2022-12-21 21:35:13.725871"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[36mCategory Load (1.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Biography"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Biography"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Create (1.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Biography"], ["created_at", "2022-12-21 21:35:13.743007"], ["updated_at", "2022-12-21 21:35:13.743007"]]
+  ↳ db/seeds.rb:59
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (2.3ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 2], ["category_id", 2]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (5.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (2.3ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 2], ["category_id", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "History"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "History"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Create (1.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "History"], ["created_at", "2022-12-21 21:35:13.828820"], ["updated_at", "2022-12-21 21:35:13.828820"]]
+  ↳ db/seeds.rb:59
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (1.6ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 2], ["category_id", 3]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mMovie Load (1.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = $1 AND "movies"."description" = $2 LIMIT $3[0m  [["title", "The Matrix"], ["description", "Thomas A. Anderson is a man living two lives. By day he is an average computer\n    programmer and by night a hacker known as Neo. Neo has always questioned his reality, but the truth is far beyond\n    his imagination. Neo finds himself targeted by the police when he is contacted by Morpheus, a legendary computer\n    hacker branded a terrorist by the government. As a rebel against the machines, Neo must confront the agents:\n    super-powerful computer programs devoted to stopping Neo and the entire human rebellion."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:55
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mMovie Create (1.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Matrix"], ["description", "Thomas A. Anderson is a man living two lives. By day he is an average computer\n    programmer and by night a hacker known as Neo. Neo has always questioned his reality, but the truth is far beyond\n    his imagination. Neo finds himself targeted by the police when he is contacted by Morpheus, a legendary computer\n    hacker branded a terrorist by the government. As a rebel against the machines, Neo must confront the agents:\n    super-powerful computer programs devoted to stopping Neo and the entire human rebellion."], ["created_at", "2022-12-21 21:35:13.858791"], ["updated_at", "2022-12-21 21:35:13.858791"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Action"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Action"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Create (1.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Action"], ["created_at", "2022-12-21 21:35:13.874486"], ["updated_at", "2022-12-21 21:35:13.874486"]]
+  ↳ db/seeds.rb:59
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 3], ["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (3.8ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 3], ["category_id", 4]]
+  ↳ db/seeds.rb:61
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Sci-Fi"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Sci-Fi"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Create (1.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sci-Fi"], ["created_at", "2022-12-21 21:35:13.918937"], ["updated_at", "2022-12-21 21:35:13.918937"]]
+  ↳ db/seeds.rb:59
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (1.5ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 3], ["category_id", 5]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = $1 AND "movies"."description" = $2 LIMIT $3[0m  [["title", "Interstellar"], ["description", "Earth's future has been riddled by disasters, famines, and droughts. There is\n    only one way to ensure mankind's survival: Interstellar travel. A newly discovered wormhole in the far reaches of\n    our solar system allows a team of astronauts to go where no man has gone before, a planet that may have the right\n    environment to sustain human life."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:55
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Interstellar"], ["description", "Earth's future has been riddled by disasters, famines, and droughts. There is\n    only one way to ensure mankind's survival: Interstellar travel. A newly discovered wormhole in the far reaches of\n    our solar system allows a team of astronauts to go where no man has gone before, a planet that may have the right\n    environment to sustain human life."], ["created_at", "2022-12-21 21:35:13.947452"], ["updated_at", "2022-12-21 21:35:13.947452"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Create (1.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Adventure"], ["created_at", "2022-12-21 21:35:13.962065"], ["updated_at", "2022-12-21 21:35:13.962065"]]
+  ↳ db/seeds.rb:59
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 4], ["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (1.4ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 4], ["category_id", 6]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (2.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 4], ["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (1.6ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 4], ["category_id", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Sci-Fi"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 4], ["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (1.4ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 4], ["category_id", 5]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = $1 AND "movies"."description" = $2 LIMIT $3[0m  [["title", "Joker"], ["description", "Arthur Fleck works as a clown and is an aspiring stand-up comic. He has mental health\n    issues, part of which involves uncontrollable laughter. Times are tough and, due to his issues and occupation,\n    Arthur has an even worse time than most. Over time these issues bear down on him, shaping his actions, making him\n    ultimately take on the persona he is more known as...Joker."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:55
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Joker"], ["description", "Arthur Fleck works as a clown and is an aspiring stand-up comic. He has mental health\n    issues, part of which involves uncontrollable laughter. Times are tough and, due to his issues and occupation,\n    Arthur has an even worse time than most. Over time these issues bear down on him, shaping his actions, making him\n    ultimately take on the persona he is more known as...Joker."], ["created_at", "2022-12-21 21:35:14.040806"], ["updated_at", "2022-12-21 21:35:14.040806"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Crime"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Crime"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Create (1.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Crime"], ["created_at", "2022-12-21 21:35:14.054418"], ["updated_at", "2022-12-21 21:35:14.054418"]]
+  ↳ db/seeds.rb:59
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 5], ["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (2.0ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 5], ["category_id", 7]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 5], ["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (2.0ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 5], ["category_id", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Thriller"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Thriller"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Create (1.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Thriller"], ["created_at", "2022-12-21 21:35:14.115227"], ["updated_at", "2022-12-21 21:35:14.115227"]]
+  ↳ db/seeds.rb:59
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 5], ["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (1.3ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 5], ["category_id", 8]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mMovie Load (1.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = $1 AND "movies"."description" = $2 LIMIT $3[0m  [["title", "Toy Story"], ["description", "A little boy named Andy loves to be in his room, playing with his toys, especially\n    his doll named 'Woody'. But, what do the toys do when Andy is not with them, they come to life. Woody believes that\n    his life (as a toy) is good. However, he must worry about Andy's family moving, and what Woody does not know is\n    about Andy's birthday party. Woody does not realize that Andy's mother gave him an action figure known as Buzz\n    Lightyear, who does not believe that he is a toy, and quickly becomes Andy's new favorite toy. Woody, who is now\n    consumed with jealousy, tries to get rid of Buzz. Then, both Woody and Buzz are now lost. They must find a way to\n    get back to Andy before he moves without them, but they will have to pass through a ruthless toy killer, Sid Phillips."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:55
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Toy Story"], ["description", "A little boy named Andy loves to be in his room, playing with his toys, especially\n    his doll named 'Woody'. But, what do the toys do when Andy is not with them, they come to life. Woody believes that\n    his life (as a toy) is good. However, he must worry about Andy's family moving, and what Woody does not know is\n    about Andy's birthday party. Woody does not realize that Andy's mother gave him an action figure known as Buzz\n    Lightyear, who does not believe that he is a toy, and quickly becomes Andy's new favorite toy. Woody, who is now\n    consumed with jealousy, tries to get rid of Buzz. Then, both Woody and Buzz are now lost. They must find a way to\n    get back to Andy before he moves without them, but they will have to pass through a ruthless toy killer, Sid Phillips."], ["created_at", "2022-12-21 21:35:14.143883"], ["updated_at", "2022-12-21 21:35:14.143883"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Animation"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Animation"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Create (1.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Animation"], ["created_at", "2022-12-21 21:35:14.158682"], ["updated_at", "2022-12-21 21:35:14.158682"]]
+  ↳ db/seeds.rb:59
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 6], ["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (2.3ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 6], ["category_id", 9]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 6], ["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (2.1ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 6], ["category_id", 6]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Comedy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Comedy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Create (1.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Comedy"], ["created_at", "2022-12-21 21:35:14.224569"], ["updated_at", "2022-12-21 21:35:14.224569"]]
+  ↳ db/seeds.rb:59
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 6], ["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (1.8ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 6], ["category_id", 10]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Family"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Family"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Create (1.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Family"], ["created_at", "2022-12-21 21:35:14.259767"], ["updated_at", "2022-12-21 21:35:14.259767"]]
+  ↳ db/seeds.rb:59
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (2.6ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 6], ["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (1.5ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 6], ["category_id", 11]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Create (2.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fantasy"], ["created_at", "2022-12-21 21:35:14.298155"], ["updated_at", "2022-12-21 21:35:14.298155"]]
+  ↳ db/seeds.rb:59
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 6], ["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (2.2ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 6], ["category_id", 12]]
+  ↳ db/seeds.rb:61
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mMovie Load (1.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = $1 AND "movies"."description" = $2 LIMIT $3[0m  [["title", " Inception"], ["description", "Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction,\n    stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable.\n    Cobb's rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also\n    made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption.\n    One last job could give him his life back but only if he can accomplish the impossible, inception. Instead of the perfect heist,\n    Cobb and his team of specialists have to pull off the reverse: their task is not to steal an idea, but to plant one. If they succeed,\n    it could be the perfect crime. But no amount of careful planning or expertise can prepare the team for the dangerous enemy that seems\n    to predict their every move. An enemy that only Cobb could have seen coming."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:55
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mMovie Create (2.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", " Inception"], ["description", "Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction,\n    stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable.\n    Cobb's rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also\n    made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption.\n    One last job could give him his life back but only if he can accomplish the impossible, inception. Instead of the perfect heist,\n    Cobb and his team of specialists have to pull off the reverse: their task is not to steal an idea, but to plant one. If they succeed,\n    it could be the perfect crime. But no amount of careful planning or expertise can prepare the team for the dangerous enemy that seems\n    to predict their every move. An enemy that only Cobb could have seen coming."], ["created_at", "2022-12-21 21:35:14.337440"], ["updated_at", "2022-12-21 21:35:14.337440"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Action"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 7], ["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (2.1ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 7], ["category_id", 4]]
+  ↳ db/seeds.rb:61
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 7], ["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (2.4ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 7], ["category_id", 6]]
+  ↳ db/seeds.rb:61
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Sci-Fi"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 7], ["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (2.2ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 7], ["category_id", 5]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Thriller"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 7], ["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (2.0ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 7], ["category_id", 8]]
+  ↳ db/seeds.rb:61
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = $1 AND "movies"."description" = $2 LIMIT $3[0m  [["title", "Back to the Future"], ["description", "Marty McFly, a typical American teenager of the Eighties, is accidentally\n    sent back to 1955 in a plutonium-powered DeLorean 'time machine' invented by a slightly mad scientist. During his often\n    hysterical, always amazing trip back in time, Marty must make certain his teenage parents-to-be meet and fall in love -\n    so he can get back to the future."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:55
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Back to the Future"], ["description", "Marty McFly, a typical American teenager of the Eighties, is accidentally\n    sent back to 1955 in a plutonium-powered DeLorean 'time machine' invented by a slightly mad scientist. During his often\n    hysterical, always amazing trip back in time, Marty must make certain his teenage parents-to-be meet and fall in love -\n    so he can get back to the future."], ["created_at", "2022-12-21 21:35:14.462162"], ["updated_at", "2022-12-21 21:35:14.462162"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 8], ["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (2.7ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 8], ["category_id", 6]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Comedy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 8], ["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (1.5ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 8], ["category_id", 10]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Sci-Fi"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 8], ["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (1.8ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 8], ["category_id", 5]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = $1 AND "movies"."description" = $2 LIMIT $3[0m  [["title", "The Lion King"], ["description", "A young lion prince is cast out of his pride by his cruel uncle, who claims he\n    killed his father. While the uncle rules with an iron paw, the prince grows up beyond the Savannah, living by a philosophy:\n    No worries for the rest of your days. But when his past comes to haunt him, the young prince must decide his fate:\n    Will he remain an outcast or face his demons and become what he needs to be?"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:55
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mMovie Create (1.7ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Lion King"], ["description", "A young lion prince is cast out of his pride by his cruel uncle, who claims he\n    killed his father. While the uncle rules with an iron paw, the prince grows up beyond the Savannah, living by a philosophy:\n    No worries for the rest of your days. But when his past comes to haunt him, the young prince must decide his fate:\n    Will he remain an outcast or face his demons and become what he needs to be?"], ["created_at", "2022-12-21 21:35:14.568919"], ["updated_at", "2022-12-21 21:35:14.568919"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Animation"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 9], ["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (2.3ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 9], ["category_id", 9]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 9], ["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (2.1ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 9], ["category_id", 6]]
+  ↳ db/seeds.rb:61
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 9], ["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (1.7ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 9], ["category_id", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Family"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 9], ["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (2.5ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 9], ["category_id", 11]]
+  ↳ db/seeds.rb:61
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mMovie Load (1.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = $1 AND "movies"."description" = $2 LIMIT $3[0m  [["title", "Intouchables"], ["description", "In Paris, the aristocratic and intellectual Philippe is a quadriplegic millionaire\n    who is interviewing candidates for the position of his carer, with his red-haired secretary Magalie. Out of the blue,\n    Driss cuts the line of candidates and brings a document from the Social Security and asks Phillipe to sign it to prove\n    that he is seeking a job position so he can receive his unemployment benefit. Philippe challenges Driss, offering him a\n    trial period of one month to gain experience helping him. Then Driss can decide whether he would like to stay with him or not.\n    Driss accepts the challenge and moves to the mansion, changing the boring life of Phillipe and his employees."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:55
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mMovie Create (2.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Intouchables"], ["description", "In Paris, the aristocratic and intellectual Philippe is a quadriplegic millionaire\n    who is interviewing candidates for the position of his carer, with his red-haired secretary Magalie. Out of the blue,\n    Driss cuts the line of candidates and brings a document from the Social Security and asks Phillipe to sign it to prove\n    that he is seeking a job position so he can receive his unemployment benefit. Philippe challenges Driss, offering him a\n    trial period of one month to gain experience helping him. Then Driss can decide whether he would like to stay with him or not.\n    Driss accepts the challenge and moves to the mansion, changing the boring life of Phillipe and his employees."], ["created_at", "2022-12-21 21:35:14.688156"], ["updated_at", "2022-12-21 21:35:14.688156"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[36mCategory Load (1.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Biography"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 10], ["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (2.1ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 10], ["category_id", 2]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Comedy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 10], ["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (1.9ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 10], ["category_id", 10]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCategory Exists (2.6ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" INNER JOIN "categories_movies" ON "categories"."id" = "categories_movies"."category_id" WHERE "categories_movies"."movie_id" = $1 AND "categories"."id" = $2 LIMIT $3[0m  [["movie_id", 10], ["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie::HABTM_Categories Create (1.8ms)[0m  [1m[32mINSERT INTO "categories_movies" ("movie_id", "category_id") VALUES ($1, $2) RETURNING "id"[0m  [["movie_id", 10], ["category_id", 1]]
+  ↳ db/seeds.rb:61
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[36mMovie Load (2.8ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[36mCategory Load (4.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+Started GET "/" for ::1 at 2022-12-22 00:22:37 +0200
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-5.2.8.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-5.2.8.1/lib/rails/templates/rails/welcome/index.html.erb (8.1ms)
+Completed 200 OK in 36ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
