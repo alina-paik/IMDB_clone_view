@@ -718,3 +718,1190 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 36ms (Views: 20.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2022-12-22 00:35:36 +0200
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (2.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/movies_controller.rb:8
+Completed 200 OK in 117ms (Views: 47.1ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/" for ::1 at 2022-12-22 00:36:16 +0200
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/movies_controller.rb:8
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 12.5ms)
+
+
+  
+ActionView::MissingTemplate (Missing partial movies/_movie with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/alina/work/IMDB_clone_view/app/views"
+  * "/home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/kaminari-core-1.2.2/app/views"
+):
+  
+app/controllers/movies_controller.rb:8:in `index'
+Started GET "/" for ::1 at 2022-12-22 00:37:06 +0200
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/movies_controller.rb:8
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::MissingTemplate (Missing partial movies/_movie with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/alina/work/IMDB_clone_view/app/views"
+  * "/home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/kaminari-core-1.2.2/app/views"
+):
+  
+app/controllers/movies_controller.rb:8:in `index'
+Started GET "/" for ::1 at 2022-12-22 00:45:27 +0200
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/movies_controller.rb:8
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionView::MissingTemplate (Missing partial movies/_movie with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/alina/work/IMDB_clone_view/app/views"
+  * "/home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/kaminari-core-1.2.2/app/views"
+):
+  
+app/controllers/movies_controller.rb:8:in `index'
+Started GET "/" for ::1 at 2022-12-22 00:48:55 +0200
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template movies/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/alina/work/IMDB_clone_view/app/views"
+  * "/home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/kaminari-core-1.2.2/app/views"
+):
+  
+app/controllers/movies_controller.rb:8:in `index'
+Started GET "/" for ::1 at 2022-12-22 00:49:13 +0200
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template movies/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/alina/work/IMDB_clone_view/app/views"
+  * "/home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/kaminari-core-1.2.2/app/views"
+):
+  
+app/controllers/movies_controller.rb:8:in `index'
+Started GET "/" for ::1 at 2022-12-22 00:59:12 +0200
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by MoviesController#index as HTML
+Completed 406 Not Acceptable in 102ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (MoviesController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.8.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.8.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.8.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.8.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.8.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-12-22 01:00:14 +0200
+Processing by MoviesController#index as HTML
+Completed 406 Not Acceptable in 73ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (MoviesController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.8.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.8.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.8.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.8.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.8.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-12-22 01:00:28 +0200
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by MoviesController#index as HTML
+Completed 406 Not Acceptable in 95ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (MoviesController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.8.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.8.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.8.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.8.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.8.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-12-22 01:01:16 +0200
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template movies/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/alina/work/IMDB_clone_view/app/views"
+  * "/home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/kaminari-core-1.2.2/app/views"
+):
+  
+app/controllers/movies_controller.rb:8:in `index'
+Started GET "/" for ::1 at 2022-12-22 01:01:49 +0200
+Processing by MoviesController#index as HTML
+Completed 406 Not Acceptable in 72ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (MoviesController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.8.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.8.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.8.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.8.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.8.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-12-22 01:03:21 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  Rendered movies/index.html.erb within layouts/application (5.6ms)
+Started GET "/" for ::1 at 2022-12-22 01:05:11 +0200
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  Rendered movies/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 32662ms (Views: 32598.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-12-22 01:06:19 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (2.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  Rendered movies/index.html.erb within layouts/application (107.8ms)
+Completed 500 Internal Server Error in 121ms (ActiveRecord: 28.7ms)
+
+
+  
+ActionView::Template::Error (Missing partial movies/_movie, application/_movie with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/alina/work/IMDB_clone_view/app/views"
+  * "/home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/kaminari-core-1.2.2/app/views"
+):
+    1: <h1>Movies</h1>
+    2: <% @movies.each do |movie| %>
+    3:   <%= render partial: "movie", locals: { product: movie } %>
+    4: <% end %>
+  
+app/views/movies/index.html.erb:3:in `block in _app_views_movies_index_html_erb___2386290566953588178_21320'
+app/views/movies/index.html.erb:2:in `_app_views_movies_index_html_erb___2386290566953588178_21320'
+Started GET "/" for ::1 at 2022-12-22 01:11:12 +0200
+Processing by MoviesController#index as HTML
+Completed 406 Not Acceptable in 103ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (MoviesController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.8.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.8.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.8.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.8.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.8.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-12-22 01:11:55 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (2.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  Rendered movies/index.html.erb within layouts/application (18.9ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (Missing partial movies/_movie, application/_movie with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/alina/work/IMDB_clone_view/app/views"
+  * "/home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/kaminari-core-1.2.2/app/views"
+):
+    1: <h1>Movies</h1>
+    2: <% @movies.each do |movie| %>
+    3:   <%= render partial: "movie", locals: { product: movie } %>
+    4: <% end %>
+  
+app/views/movies/index.html.erb:3:in `block in _app_views_movies_index_html_erb___2386290566953588178_22480'
+app/views/movies/index.html.erb:2:in `_app_views_movies_index_html_erb___2386290566953588178_22480'
+Started GET "/" for ::1 at 2022-12-22 01:12:50 +0200
+Processing by MoviesController#index as HTML
+Completed 406 Not Acceptable in 92ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (MoviesController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.8.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.8.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.8.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.8.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.8.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-12-22 01:13:02 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (2.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  Rendered movies/index.html.erb within layouts/application (17.5ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial movies/_movie, application/_movie with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/alina/work/IMDB_clone_view/app/views"
+  * "/home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/kaminari-core-1.2.2/app/views"
+):
+    1: <h1>Movies</h1>
+    2: <% @movies.each do |movie| %>
+    3:   <%= render partial: "movie", locals: { product: movie } %>
+    4: <% end %>
+  
+app/views/movies/index.html.erb:3:in `block in _app_views_movies_index_html_erb___2386290566953588178_23520'
+app/views/movies/index.html.erb:2:in `_app_views_movies_index_html_erb___2386290566953588178_23520'
+Started GET "/" for ::1 at 2022-12-22 01:15:21 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (4.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  Rendered movies/index.html.erb within layouts/application (23.1ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 4.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial movies/_movie, application/_movie with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/alina/work/IMDB_clone_view/app/views"
+  * "/home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/kaminari-core-1.2.2/app/views"
+):
+    1: <h1>Movies</h1>
+    2: <% @movies.each do |movie| %>
+    3:   <%= render partial: "movie", locals: { product: movie } %>
+    4: <% end %>
+  
+app/views/movies/index.html.erb:3:in `block in _app_views_movies_index_html_erb___2386290566953588178_24040'
+app/views/movies/index.html.erb:2:in `_app_views_movies_index_html_erb___2386290566953588178_24040'
+Started GET "/" for ::1 at 2022-12-22 01:15:47 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  Rendered movies/index.html.erb within layouts/application (12.7ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial movies/_movie, application/_movie with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/alina/work/IMDB_clone_view/app/views"
+  * "/home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/kaminari-core-1.2.2/app/views"
+):
+    1: <h1>Movies</h1>
+    2: <% @movies.each do |movie| %>
+    3:   <%= render partial: "movie", locals: { product: movie } %>
+    4: <% end %>
+  
+app/views/movies/index.html.erb:3:in `block in _app_views_movies_index_html_erb___2386290566953588178_24560'
+app/views/movies/index.html.erb:2:in `_app_views_movies_index_html_erb___2386290566953588178_24560'
+Started GET "/" for ::1 at 2022-12-22 01:16:11 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (3.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  Rendered movies/_movie.html.erb (1.7ms)
+  Rendered movies/_movie.html.erb (0.1ms)
+  Rendered movies/_movie.html.erb (0.1ms)
+  Rendered movies/_movie.html.erb (0.1ms)
+  Rendered movies/_movie.html.erb (0.3ms)
+  Rendered movies/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 268ms (Views: 261.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2022-12-22 01:21:22 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  Rendered movies/_movie.html.erb (792.8ms)
+  Rendered movies/index.html.erb within layouts/application (804.4ms)
+Completed 500 Internal Server Error in 815ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `movie' for #<#<Class:0x00007f4734cc6668>:0x00007f47378877e8>
+Did you mean?  @movies):
+    1: <p>Movie: <%= movie.name %></p>
+  
+app/views/movies/_movie.html.erb:1:in `_app_views_movies__movie_html_erb___3538128257736774556_25200'
+app/views/movies/index.html.erb:3:in `block in _app_views_movies_index_html_erb___2386290566953588178_25180'
+app/views/movies/index.html.erb:2:in `_app_views_movies_index_html_erb___2386290566953588178_25180'
+Started GET "/" for ::1 at 2022-12-22 01:22:06 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (2.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  Rendered movies/_movie.html.erb (9.5ms)
+  Rendered movies/index.html.erb within layouts/application (21.6ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <p>Movie: <%= @movie.name %></p>
+  
+app/views/movies/_movie.html.erb:1:in `_app_views_movies__movie_html_erb___3538128257736774556_25860'
+app/views/movies/index.html.erb:3:in `block in _app_views_movies_index_html_erb___2386290566953588178_25840'
+app/views/movies/index.html.erb:2:in `_app_views_movies_index_html_erb___2386290566953588178_25840'
+Started GET "/" for ::1 at 2022-12-22 01:23:30 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (2.8ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  Rendered movies/_movie.html.erb (38.2ms)
+  Rendered movies/index.html.erb within layouts/application (52.1ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Movie:0x00007f4735810f28>):
+    1: <p>Movie: <%= product.name %></p>
+  
+app/views/movies/_movie.html.erb:1:in `_app_views_movies__movie_html_erb___3538128257736774556_26400'
+app/views/movies/index.html.erb:3:in `block in _app_views_movies_index_html_erb___2386290566953588178_26380'
+app/views/movies/index.html.erb:2:in `_app_views_movies_index_html_erb___2386290566953588178_26380'
+Started GET "/" for ::1 at 2022-12-22 01:24:41 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  Rendered movies/_movie.html.erb (921.7ms)
+  Rendered movies/index.html.erb within layouts/application (931.8ms)
+Completed 500 Internal Server Error in 940ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `movie' for #<#<Class:0x00007f4734cc6668>:0x00007f4736ba0a70>
+Did you mean?  @movies):
+    1: <p>Movie: <%= movie.title %></p>
+  
+app/views/movies/_movie.html.erb:1:in `_app_views_movies__movie_html_erb___3538128257736774556_26940'
+app/views/movies/index.html.erb:3:in `block in _app_views_movies_index_html_erb___2386290566953588178_26920'
+app/views/movies/index.html.erb:2:in `_app_views_movies_index_html_erb___2386290566953588178_26920'
+Started GET "/" for ::1 at 2022-12-22 01:25:16 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  Rendered movies/_movie.html.erb (2.3ms)
+  Rendered movies/_movie.html.erb (0.2ms)
+  Rendered movies/_movie.html.erb (0.2ms)
+  Rendered movies/_movie.html.erb (0.3ms)
+  Rendered movies/_movie.html.erb (0.2ms)
+  Rendered movies/index.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 255ms (Views: 249.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2022-12-22 01:25:47 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (3.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  Rendered movies/_movie.html.erb (1.3ms)
+  Rendered movies/_movie.html.erb (0.2ms)
+  Rendered movies/_movie.html.erb (0.3ms)
+  Rendered movies/_movie.html.erb (0.2ms)
+  Rendered movies/_movie.html.erb (0.2ms)
+  Rendered movies/index.html.erb within layouts/application (47.5ms)
+Completed 200 OK in 275ms (Views: 269.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2022-12-22 01:26:46 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.8ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  Rendered movies/_movie.html.erb (1.5ms)
+  Rendered movies/_movie.html.erb (0.2ms)
+  Rendered movies/_movie.html.erb (0.2ms)
+  Rendered movies/_movie.html.erb (0.2ms)
+  Rendered movies/_movie.html.erb (0.2ms)
+  Rendered movies/index.html.erb within layouts/application (36.9ms)
+Completed 200 OK in 307ms (Views: 301.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2022-12-22 01:27:26 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  [1m[35m (8.0ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (55.9ms)
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (8.3ms)
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (8.3ms)
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (6.4ms)
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (14.0ms)
+  Rendered movies/index.html.erb within layouts/application (108.5ms)
+Completed 200 OK in 348ms (Views: 320.7ms | ActiveRecord: 23.5ms)
+
+
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (4.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test20@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Exists (3.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test20@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test20@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (7.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test"], ["email", "test20@gmail.com"], ["password", "testeeeee"], ["created_at", "2022-12-21 23:32:52.153868"], ["updated_at", "2022-12-21 23:32:52.153868"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (2.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRating Exists (3.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ratings" WHERE "ratings"."user_id" = $1 AND "ratings"."movie_id" = $2 LIMIT $3[0m  [["user_id", 1], ["movie_id", 1], ["LIMIT", 1]]
+  [1m[36mRating Create (4.7ms)[0m  [1m[32mINSERT INTO "ratings" ("user_id", "movie_id", "grade") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["movie_id", 1], ["grade", 7]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2022-12-22 01:33:43 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.8ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (9.8ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (3.1ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (3.7ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (4.2ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (3.4ms)
+  Rendered movies/index.html.erb within layouts/application (41.7ms)
+Completed 200 OK in 253ms (Views: 238.0ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/" for ::1 at 2022-12-22 01:38:09 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (2.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (13.4ms)
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (9.0ms)
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (12.6ms)
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (9.2ms)
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (8.4ms)
+  Rendered movies/index.html.erb within layouts/application (89.4ms)
+Completed 200 OK in 411ms (Views: 391.2ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/2" for ::1 at 2022-12-22 01:38:27 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/2"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-12-22 01:38:38 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (2.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (7.6ms)
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (10.3ms)
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (9.8ms)
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (6.1ms)
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (8.5ms)
+  Rendered movies/index.html.erb within layouts/application (66.6ms)
+Completed 200 OK in 303ms (Views: 288.3ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/" for ::1 at 2022-12-22 01:51:40 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (14.4ms)
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (4.4ms)
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (7.2ms)
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (10.9ms)
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (5.3ms)
+  Rendered movies/index.html.erb within layouts/application (61.1ms)
+Completed 200 OK in 273ms (Views: 252.7ms | ActiveRecord: 18.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dist/js/bootstrap.bundle.min.js"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.8.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.8.1) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.8.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.8.1) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-12-22 01:51:43 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (7.5ms)
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (18.8ms)
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (6.9ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (3.9ms)
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (7.2ms)
+  Rendered movies/index.html.erb within layouts/application (67.8ms)
+Completed 200 OK in 280ms (Views: 264.5ms | ActiveRecord: 12.3ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dist/js/bootstrap.bundle.min.js"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.8.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.8.1) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.8.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.8.1) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-12-22 01:52:04 +0200
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (2.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (24.2ms)
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (5.6ms)
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (7.4ms)
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (6.0ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (6.0ms)
+  Rendered movies/index.html.erb within layouts/application (128.9ms)
+Completed 200 OK in 1234ms (Views: 1144.9ms | ActiveRecord: 31.3ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dist/js/bootstrap.bundle.min.js"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.8.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.8.1) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.8.1) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.8.1) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-12-22 02:11:39 +0200
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alina/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.8ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (36.4ms)
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (4.6ms)
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (5.2ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (3.4ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (3.4ms)
+  Rendered movies/index.html.erb within layouts/application (187.6ms)
+  Rendered layouts/_header.html.erb (2.7ms)
+Completed 200 OK in 35307ms (Views: 35184.1ms | ActiveRecord: 65.0ms)
+
+
+Started GET "/" for ::1 at 2022-12-22 02:19:24 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (2.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/movies/index.html.erb:2
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (15.0ms)
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (9.2ms)
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (13.1ms)
+  [1m[35m (9.4ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (12.1ms)
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT AVG("ratings"."grade") FROM "ratings" WHERE "ratings"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/models/movie.rb:9
+  Rendered movies/_movie.html.erb (5.2ms)
+  Rendered movies/index.html.erb within layouts/application (87.4ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 362ms (Views: 336.1ms | ActiveRecord: 20.6ms)
+
+

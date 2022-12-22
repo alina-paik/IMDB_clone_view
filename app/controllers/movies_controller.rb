@@ -5,7 +5,6 @@ class MoviesController < ApplicationController
   # GET /movies?page=:page
    def index
      @movies = Movie.page(params[:page])
-     render json: @movies
    end
 
    # GET /movies/:id

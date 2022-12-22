@@ -13,7 +13,7 @@ gem 'rack-cors'
 gem 'jwt'
 gem "kaminari"
 
-gem 'bootstrap', '~> 5.2.2'
+gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
 # SCSS
 gem 'sass-rails', '~> 5.0'
